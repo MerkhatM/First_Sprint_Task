@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+    <div th:insert="~{bootstrap}"></div>
+</head>
+<body>
+<div class="container">
+    <div th:insert="~{navbar}"></div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>SURNAME</th>
+                <th>EXAM</th>
+                <th>MARK</th>
+            </thead>
+            <tbody>
+
+<!--            почему-то не работает такой способ:-->
+<!--                <tr th:each="student:${students}" th:style="${student.getMark()=='F'?'color:red':''}" >-->
+
+
+                <tr th:each="student:${students}"  >
+                    <td th:text="${student.getId()}" th:style="${student.getMark()=='F'?'color:red':''}"></td>
+                    <td th:text="${student.getName()}" th:style="${student.getMark()=='F'?'color:red':''}"></td>
+                    <td th:text="${student.getSurname()}" th:style="${student.getMark()=='F'?'color:red':''}"></td>
+                    <td th:text="${student.getExam()}" th:style="${student.getMark()=='F'?'color:red':''}"></td>
+                    <td th:text="${student.getMark()}" th:style="${student.getMark()=='F'?'color:red':''}"></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
