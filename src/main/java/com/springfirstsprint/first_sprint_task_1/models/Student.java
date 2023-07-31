@@ -10,15 +10,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Student {
-    Long id;
+    private Long id;
 
-    String name;
+    private String name;
 
-    String surname;
+    private String surname;
 
-    int exam;
+    private int exam;
 
-    String mark;
+    private String mark;
 
 
 }
